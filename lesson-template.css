@@ -1,0 +1,513 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap);
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: url(images/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+nav {
+    background: #01164D;
+    width: 100%;
+    height: 50%;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1000;
+}
+
+nav img {
+    width: 120px;
+}
+
+.logo {
+    width: 0px;
+}
+
+.profile {
+    position: absolute;
+    top: 7px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.profile img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.menu {
+    position: absolute;
+    width: 260px;
+    background-color: #01164D;
+    top: 100px;
+    right: 15px;
+    border-radius: 20px;
+    max-height: 500px;
+    overflow-y: scroll;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.active {
+    visibility: visible;
+    opacity: 1;
+    top: 75px;
+}
+
+.menu::before {
+    content: "";
+    background-color: #01164D;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -8px;
+    right: 35px;
+    rotate: 45deg;
+}
+
+.menu h3 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 18px 0 5px;
+    color: #fff;
+}
+
+.menu p {
+    font-size: 1rem;
+    text-align: center;
+    color: #b9b9b9;
+    margin-bottom: 20px;
+}
+
+.menu ul {
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.menu ul li {
+    border-top: 1px solid #33333310;
+    background: #01164D;
+    transition: 0.5s;
+}
+
+.menu ul li:hover {
+    background: #004aad;
+}
+
+.menu ul li i {
+    font-size: 35px;
+    color: #b4b4b4;
+    transition: 0.5s;
+}
+
+.menu ul li:hover i {
+    color: #111;
+}
+
+.menu ul li a {
+    font-size: 20px;
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 1%;
+    width: 330px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-wrap .open-menu {
+    max-height: 553px;
+}
+
+.sub-menu {
+    background: #01164D;
+    padding: 12px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #fff;
+    border: #fff;
+}
+
+.user-info h3 {
+    font-weight: 500;
+}
+
+.user-info img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 3px;
+    border-radius: 5px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    margin: 12px 0;
+}
+
+.sub-menu-link:hover {
+    background-color: #004aad;
+    border-radius: 10px;
+}
+
+.sub-menu-link p {
+    width: 100%;
+    align-items: center;
+}
+
+.sub-menu-link img {
+    width: 40px;
+    padding: 8px;
+    margin-right: 15px;
+    background: transparent;
+}
+
+.sub-menu-link span {
+    font-size: 25px;
+    transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span {
+    transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .application-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search input {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+/* Container */
+.container {
+    display:flex;
+    width: 80%; /* Set width of the container */
+    height: 90%; /* Set height of the container */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 20px auto; /* Center the container horizontally */
+    position:relative; 
+}
+
+/* Sidebar */
+.sidebar {
+    position: relative;  /* Make the sidebar stick within the container */
+    top: 0;  /* Stick it to the top of the container */
+    width: 250px; /* Sidebar width */
+    background-color: #f3f3f3;
+    z-index: 1; /* Ensure it stays above other content inside the container */
+    height: 100%; /* Ensure the sidebar takes up the full height of the container */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow to separate the sidebar */
+}
+
+
+/* Sidebar Header */
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #444;
+}
+
+/* Sidebar List */
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Sidebar Links */
+.pl-lesson-link {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+}
+
+.pl-lesson-link:hover {
+    background-color: #d5e1f2;
+    color: #000;
+    font-weight: bold;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+    background-color: #d5e1f2;
+    color: #000;
+    font-weight: bold;
+}
+
+
+/* Content */
+.main-content {
+    flex: 1;
+    background-color: #0047ab;
+    color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.main-content h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #f3f3f3;
+}
+
+.card {
+    background-color: #00357a;
+    color: #fff;
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid #2a6bbf;
+    border-radius: 5px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cta-card {
+    background-color: #00357a;
+    color: #fff;
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid #2a6bbf;
+    border-radius: 5px;
+}
+
+.cta-card h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    background-color: #ffd700;
+    color: #000;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #e0c000;
+}
+
+/* Introduction Section */
+.introduction {
+    margin-top: 30px;
+}
+
+.introduction h1,
+.introduction h2,
+.introduction h3 {
+    margin: 20px 0px;
+    color: #ffd700; /* Golden headings */
+}
+
+.introduction p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Code Example Container */
+.code-container {
+    background-color: #4e80c2a6;
+    color: #fff;
+    padding: 15px;
+    border: 1px solid #2a6bbf;
+    border-radius: 5px;
+    margin: 20px 0;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: auto;
+}
+
+.code-container pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+}
+
+.section-line{
+    margin: 50px 0px;
+    border: 2px solid #2a6bbf; }
+
+    
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px; /* Scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+    background: #e6e7ff; /* Track color */
+    border-radius: 10px; /* Rounded edges for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b6b6ff; /* Thumb color (pink) */
+    border-radius: 10px; /* Rounded scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8e90ff; /* Thumb hover color */
+}
+
+.pl-code-box pre {
+    margin: 0;
+    white-space: pre-wrap; /* Wrap text if it exceeds container width */
+    font-size: 14px; /* Adjust font size inside pre tag */
+    line-height: 1.4; /* Adjust line spacing */
+}
+
+/* Exercise Card Adjustments */
+.main-content .card {
+    background-color: #00357a; /* Keeps the existing blue */
+    color: #fff;
+    padding: 10px; /* Reduce padding */
+    margin: 10px 0; /* Smaller margins */
+    border: 1px solid #2a6bbf;
+    border-radius: 5px;
+    font-size: 12px; /* Smaller font size */
+    line-height: 1.4; /* Tighter spacing */
+}
+
+.main-content .card h2, 
+.main-content .card h3 {
+    font-size: 14px; /* Smaller headings */
+    margin-bottom: 8px;
+}
+
+.main-content .card p {
+    font-size: 12px; /* Reduced font size */
+    margin-bottom: 5px;
+}
+
+.main-content .card label {
+    font-size: 12px; /* Smaller label text */
+}
+
+.main-content .card input {
+    padding: 4px 6px; /* Smaller input padding */
+    font-size: 12px;
+    margin-bottom: 5px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.main-content .card button {
+    padding: 4px 6px; /* Smaller buttons */
+    font-size: 12px;
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.main-content .card button:hover {
+    background-color: #e0c000;
+}
+
+.main-content .card p[id*="feedback"] {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.code-container input {
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #ffd700; /* Add a bottom line */
+    background: transparent; /* Transparent background */
+    outline: none; /* Remove outline on focus */
+    color: #fff; /* Match the code text color */
+    font-family: 'Courier New', Courier, monospace; /* Match code font */
+    font-size: 14px; /* Adjust font size */
+    width: 70px; /* Fixed width for input */
+    text-align: center; /* Center the input text */
+    margin: 0 5px; /* Add spacing around the input */
+    transition: border-color 0.3s; /* Smooth effect */
+}
+
+.code-container input:focus {
+    border-bottom: 2px solid #e0c000; /* Highlight bottom line on focus */
+}

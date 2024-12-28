@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: url(images/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+nav {
+    background: #01164D;
+    width: 100%;
+    height: 50%;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1000;
+}
+
+nav img {
+    width: 120px;
+}
+
+.logo {
+    width: 0px;
+}
+
+.profile {
+    position: absolute;
+    top: 7px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.profile img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.menu {
+    position: absolute;
+    width: 260px;
+    background-color: #01164D;
+    top: 100px;
+    right: 15px;
+    border-radius: 20px;
+    max-height: 500px;
+    overflow-y: scroll;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.active {
+    visibility: visible;
+    opacity: 1;
+    top: 75px;
+}
+
+.menu::before {
+    content: "";
+    background-color: #01164D;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -8px;
+    right: 35px;
+    rotate: 45deg;
+}
+
+.menu h3 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 18px 0 5px;
+    color: #fff;
+}
+
+.menu p {
+    font-size: 1rem;
+    text-align: center;
+    color: #b9b9b9;
+    margin-bottom: 20px;
+}
+
+.menu ul {
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.menu ul li {
+    border-top: 1px solid #33333310;
+    background: #01164D;
+    transition: 0.5s;
+}
+
+.menu ul li:hover {
+    background: #004aad;
+}
+
+.menu ul li i {
+    font-size: 35px;
+    color: #b4b4b4;
+    transition: 0.5s;
+}
+
+.menu ul li:hover i {
+    color: #111;
+}
+
+.menu ul li a {
+    font-size: 20px;
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 1%;
+    width: 330px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-wrap .open-menu {
+    max-height: 553px;
+}
+
+.sub-menu {
+    background: #01164D;
+    padding: 12px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #fff;
+    border: #fff;
+}
+
+.user-info h3 {
+    font-weight: 500;
+}
+
+.user-info img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 3px;
+    border-radius: 5px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    margin: 12px 0;
+}
+
+.sub-menu-link:hover {
+    background-color: #004aad;
+    border-radius: 10px;
+}
+
+.sub-menu-link p {
+    width: 100%;
+    align-items: center;
+}
+
+.sub-menu-link img {
+    width: 40px;
+    padding: 8px;
+    margin-right: 15px;
+    background: transparent;
+}
+
+.sub-menu-link span {
+    font-size: 25px;
+    transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span {
+    transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+    font-weight: 600;
+}
+
+.container {
+    padding: 50px;
+}
+
+.page-title {
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.application-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card .content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card .content p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.card .content form {
+    margin-top: 20px;
+}
+
+.card .content .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.accept-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.accept-btn:hover {
+    background-color: #45a049;
+}
+
+.decline-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.decline-btn:hover {
+    background-color: #d32f2f;
+}
+
+.container p {
+    font-size: 18px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .application-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search input {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

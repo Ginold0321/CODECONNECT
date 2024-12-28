@@ -1,0 +1,108 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(images/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+.logins{
+    margin: 15px;
+    font-size: 30px;
+    font-weight: 800;
+    color: #01043d;
+    text-align: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: #01043d;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.header img {
+    width: 200px;
+    margin: 5px;
+
+}
+
+.form-group {
+    margin-bottom: 11px;
+}
+.form-group label{
+    color: #004aad;
+    font-weight: 550;
+    margin-left: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #004aad;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #01043d;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    
+    width: 100%;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.social-buttons button {
+    background-color: #01043d;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 35%;
+}
+
+.social-buttons button i {
+    margin-right: 5px;
+}
+
+.forgot-password {
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 25px;
+}
+
+.forgot-password a {
+    color: blue;
+    font-size: 15px;
+    text-decoration: none;
+}
